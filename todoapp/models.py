@@ -5,3 +5,6 @@ class TodoItem(models.Model):
         description = models.CharField(max_length=5000)
         deadline = models.DateField(default=date.today)
         progress = models.SmallIntegerField(default=0)
+
+        def __str__(self):
+            return self.description

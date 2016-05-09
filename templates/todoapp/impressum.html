@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    
     <title>Bootstrap Assigment</title>
 
     <!-- Bootstrap -->
@@ -17,67 +17,34 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <style>
-    	.grey-box
-    	{
-    		background-color: gray;
-    		height: 200px;
-    		margin-bottom: 10px;
-    		font-size: 2em;
-    		text-align: center;
-    		padding: 80px;
-    	}
-    </style>
-  </head>
 
   <body>
     <div class="container">
-      <h1>Welcome to da ToDo App!</h1>
-<nav class="navbar navbar-default">
+      <h1>Impressum</h1>
+        <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">ToDo App</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="index.html">Home</a></li>
-      <li><a href="{% url 'todoapp:createtodo' %}">Create new ToDo</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="createtodo.html">Create new ToDo</a></li>
       <li><a href="edittodo.html">Edit ToDo</a></li>
       <li><a href="howto.html">Howto</a></li>
-      <li><a href="impressum.html">Impressum</a></li>
+      <li class="active"><a href="impressum.html">Impressum</a></li>
     </ul>
   </div>
 </nav>
-      <div class="table-responsive">
-        <table class = "table table-bordered table-responsive">
-   <caption>ToDo List</caption>
-   <thead>
-      <tr>
-         <th>ToDo</th>
-         <th>Deadline</th>
-         <th>Completed</th>
-      </tr>
-   </thead>
-
-   <tbody>
-      <tr>
-          {% if todo_list %}
-              {% for todoItem in todo_list %}
-                 <td>{{ todoItem.description }}</td>
-                 <td>{{ todoItem.deadline }}</td>
-                 <td>{{ todoItem.progress }}</td>
-                 <td><button type="button" class="btn btn-warning">Edit</button></td>
-                 <td><button type="button" class="btn btn-danger">Delete</button></td>
-              {% endfor %}
-          {% else %}
-              <p>No todos are available.</p>
-          {% endif %}
-      </tr>
-   </tbody>
-
-</table>
+      <div class="row">
+        <div class="col-md-4 col-lg-6 col-sm-6 col-xs-12">Bruno Kortowski AKA oldsport76</div>
+        <div class="col-md-4 col-lg-6 col-sm-6 col-xs-12">Vincent Ulitzsch AKA sleik</div>
       </div>
 
+    
 
+      </div>
+
+     
 
     </div>
 

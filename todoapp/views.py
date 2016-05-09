@@ -11,3 +11,9 @@ def index(request):
             'todo_list': todo_list,
         }
         return HttpResponse(template.render(context,request))
+
+def createtodo(request):
+        template = loader.get_template('todoapp/createtodo.html')
+        context = null
+
+        return HttpResponse(template.render(context,request))
