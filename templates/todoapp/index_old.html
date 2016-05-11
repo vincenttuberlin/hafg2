@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    
     <title>Bootstrap Assigment</title>
 
     <!-- Bootstrap -->
@@ -40,7 +40,7 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="index.html">Home</a></li>
-      <li><a href="{% url 'todoapp:createtodo' %}">Create new ToDo</a></li>
+      <li><a href="createtodo.html">Create new ToDo</a></li>
       <li><a href="edittodo.html">Edit ToDo</a></li>
       <li><a href="howto.html">Howto</a></li>
       <li><a href="impressum.html">Impressum</a></li>
@@ -57,23 +57,41 @@
          <th>Completed</th>
       </tr>
    </thead>
-
+   
    <tbody>
       <tr>
-          {% if todo_list %}
-              {% for todoItem in todo_list %}
-                 <td>{{ todoItem.description }}</td>
-                 <td>{{ todoItem.deadline }}</td>
-                 <td>{{ todoItem.progress }}</td>
-                 <td><button type="button" class="btn btn-warning">Edit</button></td>
-                 <td><button type="button" class="btn btn-danger">Delete</button></td>
-              {% endfor %}
-          {% else %}
-              <p>No todos are available.</p>
-          {% endif %}
+         <td>Eating Kebap</td>
+         <td>29.04.16</td>
+         <td>27%</td>
+         <td><button type="button" class="btn btn-warning">Edit</button></td>
+         <td><button type="button" class="btn btn-danger">Delete</button></td>
+      </tr>
+      
+      <tr>
+         <td>Taking part in import-export business</td>
+         <td>20.04.16</td>
+         <td>42%</td>
+         <td><button type="button" class="btn btn-warning">Edit</button></td>
+         <td><button type="button" class="btn btn-danger">Delete</button></td>
+      </tr>
+      
+      <tr>
+         <td>Eating falafel</td>
+         <td>07.07.16</td>
+         <td>56%</td>
+         <td><button type="button" class="btn btn-warning">Edit</button></td>
+         <td><button type="button" class="btn btn-danger">Delete</button></td>
+      </tr>
+
+      <tr>
+         <td>Enjoying time with Rolf Niedermayer</td>
+         <td>31.07.17</td>
+         <td>77%</td>
+         <td><button type="button" class="btn btn-warning">Edit</button></td>
+         <td><button type="button" class="btn btn-danger">Delete</button></td>
       </tr>
    </tbody>
-
+  
 </table>
       </div>
 

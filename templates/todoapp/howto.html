@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    
     <title>Bootstrap Assigment</title>
 
     <!-- Bootstrap -->
@@ -39,51 +39,21 @@
       <a class="navbar-brand" href="#">ToDo App</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="index.html">Home</a></li>
-      <li><a href="{% url 'todoapp:createtodo' %}">Create new ToDo</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="createtodo.html">Create new ToDo</a></li>
       <li><a href="edittodo.html">Edit ToDo</a></li>
-      <li><a href="howto.html">Howto</a></li>
+      <li class="active"><a href="howto.html">Howto</a></li>
       <li><a href="impressum.html">Impressum</a></li>
     </ul>
   </div>
 </nav>
-      <div class="table-responsive">
-        <table class = "table table-bordered table-responsive">
-   <caption>ToDo List</caption>
-   <thead>
-      <tr>
-         <th>ToDo</th>
-         <th>Deadline</th>
-         <th>Completed</th>
-      </tr>
-   </thead>
-
-   <tbody>
-      <tr>
-          {% if todo_list %}
-              {% for todoItem in todo_list %}
-                 <td>{{ todoItem.description }}</td>
-                 <td>{{ todoItem.deadline }}</td>
-                 <td>{{ todoItem.progress }}</td>
-                 <td><button type="button" class="btn btn-warning">Edit</button></td>
-                 <td><button type="button" class="btn btn-danger">Delete</button></td>
-              {% endfor %}
-          {% else %}
-              <p>No todos are available.</p>
-          {% endif %}
-      </tr>
-   </tbody>
-
-</table>
-      </div>
-
-
-
-    </div>
-
+ <ul class="list-group">
+  <li class="list-group-item">Choose Create-ToDo</li>
+  <li class="list-group-item">Fill in the Fields "Description","Deadline" and "Completed"</li>
+  <li class="list-group-item">Click the Submit Button - Done!</li>
+</ul></div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
   </body>

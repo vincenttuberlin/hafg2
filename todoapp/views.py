@@ -15,3 +15,9 @@ def about(request):
 	template = loader.get_template('todoapp/about.html)	
 	return HttpResponse(template.render(request))
 
+
+def createtodo(request):
+        template = loader.get_template('todoapp/createtodo.html')
+        context = null
+
+        return HttpResponse(template.render(context,request))
