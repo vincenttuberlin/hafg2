@@ -1,52 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Bootstrap Assigment</title>
-
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <style>
-    	.grey-box
-    	{
-    		background-color: gray;
-    		height: 200px;
-    		margin-bottom: 10px;
-    		font-size: 2em;
-    		text-align: center;
-    		padding: 80px;
-    	}
-    </style>
-  </head>
-
-  <body>
-    <div class="container">
-      <h1>Welcome to da ToDo App!</h1>
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">ToDo App</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="index.html">Home</a></li>
-      <li><a href="{% url 'todoapp:createtodo' %}">Create new ToDo</a></li>
-      <li><a href="edittodo.html">Edit ToDo</a></li>
-      <li><a href="howto.html">Howto</a></li>
-      <li><a href="impressum.html">Impressum</a></li>
-    </ul>
-  </div>
-</nav>
+{% extends 'todoapp/base.html' %}
+{% block maincontent %}
+{% if todo_list %}
       <div class="table-responsive">
         <table class = "table table-bordered table-responsive">
    <caption>ToDo List</caption>
@@ -59,32 +13,21 @@
    </thead>
 
    <tbody>
-      <tr>
-          {% if todo_list %}
-              {% for todoItem in todo_list %}
-                 <td>{{ todoItem.description }}</td>
-                 <td>{{ todoItem.deadline }}</td>
-                 <td>{{ todoItem.progress }}</td>
-                 <td><button type="button" class="btn btn-warning">Edit</button></td>
-                 <td><button type="button" class="btn btn-danger">Delete</button></td>
-              {% endfor %}
-          {% else %}
-              <p>No todos are available.</p>
-          {% endif %}
-      </tr>
-   </tbody>
+       {% for todoItem in todo_list %}
+           <tr>
+           <td>{{todoItem.description}}</td>
+           <td>{{todoItem.deadline}}</td>
+           <td>{{todoItem.progress}}%</td>
+         <td><a href="edit/{{ todoItem.id }}"><button type="button" class="btn btn-warning">Edit</button></a></td>
+         <td>
+            <a href="delete/{{ todoItem.id }}"><button type="button" class="btn btn-danger">Delete</button></a></td>
 
+           </tr>
+    {% endfor %}
+   </tbody>
 </table>
       </div>
-
-
-
-    </div>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-  </body>
-</html>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+{% endblock %}
