@@ -7,6 +7,7 @@ urlpatterns = [
     url(r'^howto.html',views.howto,name='howto'),
     url(r'^createtodo.html','todoapp.views.createtodo',name='createtodo'),
     url(r'^delete/([0-9]*)/$',views.delete),
-    url(r'^edit/([0-9]*)/$',views.edit)
+    url(r'^edit/([0-9]*)/$',views.edit),
+	url(r'^$',views.index)
 
 ]
